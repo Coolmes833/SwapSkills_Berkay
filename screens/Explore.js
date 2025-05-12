@@ -75,20 +75,20 @@ export default function Explore() {
     const handleSwipeLeft = () => {
         if (cardIndex < users.length) {
             Alert.alert('Rejected', `${users[cardIndex]?.name || 'Unknown User'} has been rejected`);
-            swiperRef.current.swipeLeft(); // Kaydırma işlemini manuel tetikle
-            setCardIndex(prevIndex => prevIndex + 1); // Sonraki karta geç
+            swiperRef.current.swipeLeft();
+            setCardIndex(prevIndex => prevIndex + 1);
         }
     };
 
     const handleSwipeRight = () => {
         if (cardIndex < users.length) {
             Alert.alert('Accepted', `${users[cardIndex]?.name || 'Unknown User'} has been accepted`);
-            swiperRef.current.swipeRight(); // Kaydırma işlemini manuel tetikle
-            setCardIndex(prevIndex => prevIndex + 1); // Sonraki karta geç
+            swiperRef.current.swipeRight();
+            setCardIndex(prevIndex => prevIndex + 1);
         }
     };
 
-    // Kullanıcı kartlarının bittiği durumu kontrol etmek için
+
     const isOutOfUsers = cardIndex >= users.length;
 
     return (

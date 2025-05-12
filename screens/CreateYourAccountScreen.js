@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         fontSize: 16,
         color: '#fff',
-        height: 50, // Sabit yükseklik
+        height: 50,
 
     },
     signUpButton: {

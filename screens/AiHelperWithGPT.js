@@ -65,7 +65,7 @@ export default function AiHelperWithGPT() {
                 />
 
                 <TouchableOpacity style={styles.button} onPress={handleAskGPT}>
-                    <Text style={styles.buttonText}>🧠 Ask Mentor</Text>
+                    <Text style={styles.buttonText}> Ask SwapSkill AI Mentor</Text>
                 </TouchableOpacity>
 
                 {loading && (

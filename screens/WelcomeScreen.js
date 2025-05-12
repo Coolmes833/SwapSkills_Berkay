@@ -78,7 +78,7 @@ export default function WelcomeScreen({ navigation }) {
                 <Text style={styles.signInButtonText}>Sign In</Text>
             </TouchableOpacity>
 
-            <View style={{ height: 15 }} /> {/* Butonlar arası boşluk */}
+            <View style={{ height: 15 }} />
 
             <TouchableOpacity
                 style={styles.googleSignInButton}
