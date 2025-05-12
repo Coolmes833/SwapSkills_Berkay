@@ -2,6 +2,7 @@
   "expo": {
     "name": "SwapSkills_1",
     "slug": "SwapSkills_1",
+    "scheme": "swapskills",
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
@@ -14,8 +15,17 @@
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {}
+      "package": "com.berkaykoseoglu833.swapskills",
+      "googleServicesFile": "./google-services.json",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
     },
-    "web": {}
+    "web": {
+      "authSession": {
+        "redirectUri": "https://auth.expo.io/@berkaykoseoglu833/SwapSkills_1"
+      }
+    }
   }
 }

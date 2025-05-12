@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     StyleSheet,
     Text,
@@ -10,14 +10,40 @@ import {
     Alert
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithCredential } from 'firebase/auth';
 import { auth } from '../fireBase';
 import { FontAwesome } from '@expo/vector-icons';
+import * as WebBrowser from 'expo-web-browser';
+import * as Google from 'expo-auth-session/providers/google';
+
+WebBrowser.maybeCompleteAuthSession();
 
 export default function WelcomeScreen({ navigation }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+
+
+    const [request, response, promptAsync] = Google.useAuthRequest({
+        expoClientId: '458732562755-i5rsl3tot05302l47q7vtkik0qguaga7.apps.googleusercontent.com',
+        androidClientId: '458732562755-i5rsl3tot05302l47q7vtkik0qguaga7.apps.googleusercontent.com'
+    });
+
+    useEffect(() => {
+        if (response?.type === 'success') {
+            const { id_token } = response.params;
+            const credential = GoogleAuthProvider.credential(id_token);
+            signInWithCredential(auth, credential)
+                .then((userCred) => {
+                    console.log('✅ Google Login:', userCred.user.email);
+                    navigation.navigate('MainApp');
+                })
+                .catch((err) => {
+                    console.error('❌ Google Login Error:', err);
+                    Alert.alert('Login Error', err.message);
+                });
+        }
+    }, [response]);
 
     const handleSignIn = async () => {
         if (!email || !password) {
@@ -80,9 +106,11 @@ export default function WelcomeScreen({ navigation }) {
 
             <View style={{ height: 15 }} />
 
+
             <TouchableOpacity
                 style={styles.googleSignInButton}
-                onPress={() => navigation.navigate('MainApp')}
+                onPress={() => promptAsync()}
+                disabled={!request}
             >
                 <Text style={styles.googleSignInButtonText}>Sign in with Google</Text>
             </TouchableOpacity>

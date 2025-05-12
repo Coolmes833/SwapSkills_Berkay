@@ -18,11 +18,13 @@
     "babel-plugin-dotenv-import": "^3.0.1",
     "date-fns": "^4.1.0",
     "expo": "~52.0.18",
+    "expo-auth-session": "~6.0.3",
     "expo-image-picker": "~16.0.3",
     "expo-linear-gradient": "~14.0.1",
     "expo-location": "~18.0.10",
     "expo-status-bar": "~2.0.0",
-    "firebase": "^11.1.0",
+    "expo-web-browser": "~14.0.2",
+    "firebase": "^11.7.1",
     "react": "18.3.1",
     "react-native": "0.76.5",
     "react-native-bottom-navigation": "^0.7.6",
@@ -33,7 +35,8 @@
     "react-native-safe-area-context": "^5.3.0",
     "react-native-screens": "^4.10.0",
     "react-native-vector-icons": "^10.2.0",
-    "uuid": "^11.0.3"
+    "uuid": "^11.0.3",
+    "react-native-web": "~0.19.13"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

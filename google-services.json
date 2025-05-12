@@ -1,0 +1,43 @@
+{
+  "project_info": {
+    "project_number": "458732562755",
+    "project_id": "swapskills-network",
+    "storage_bucket": "swapskills-network.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458732562755:android:3c160ece821583dbda27f6",
+        "android_client_info": {
+          "package_name": "com.berkaykoseoglu833.swapskills"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "458732562755-qmk9m15e6ui6jjvoj2saoiemeei4mg7n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.berkaykoseoglu833.swapskills",
+            "certificate_hash": "d83df28753cca15b7d72dd7ac8db768a3288136f"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0ccPf7OZsZn-HqFLQ9ucN0JMqsY9lAac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "458732562755-i5rsl3tot05302l47q7vtkik0qguaga7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -20,7 +20,6 @@ import AiHelperWithGPT from './screens/AiHelperWithGPT';
 import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
 
 
-
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -47,7 +46,7 @@ function TabNavigator() {
             iconName = 'hourglass-half';
           }
           else if (route.name === 'AI Help') {
-            iconName = 'lightbulb-o'; // alternatif: 'brain', 'robot', 'book'
+            iconName = 'lightbulb-o';
           }
 
 
@@ -68,7 +67,7 @@ function TabNavigator() {
         },
         tabBarItemStyle: {
           borderRightWidth: 1,
-          borderRightColor: '#ffffff55', // yarı saydam beyaz
+          borderRightColor: '#ffffff55',
         },
         tabBarActiveTintColor: '#fff',
         tabBarInactiveTintColor: '#fff',
@@ -85,6 +84,7 @@ function TabNavigator() {
       <Tab.Screen name="Search" component={SearchScreen} />
       <Tab.Screen name="AI Help" component={AiHelperWithGPT} />
       <Tab.Screen name="Requests" component={Requests} />
+
     </Tab.Navigator>
   );
 }
