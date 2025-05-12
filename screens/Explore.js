@@ -70,22 +70,10 @@ export default function Explore() {
         }
     };
 
-    const handleSwipeRight = async () => {
-        if (cardIndex < users.length) {
-            const likedUserId = users[cardIndex]?.id;
-            await handleLike(likedUserId);
-            swiperRef.current.swipeRight();
-        }
-    };
+
 
     const handleSwipeLeft = () => {
         if (cardIndex < users.length) {
-<<<<<<< HEAD
-            swiperRef.current.swipeLeft();
-        }
-    };
-
-=======
             Alert.alert('Rejected', `${users[cardIndex]?.name || 'Unknown User'} has been rejected`);
             swiperRef.current.swipeLeft(); // Kaydırma işlemini manuel tetikle
             setCardIndex(prevIndex => prevIndex + 1); // Sonraki karta geç
@@ -101,7 +89,6 @@ export default function Explore() {
     };
 
     // Kullanıcı kartlarının bittiği durumu kontrol etmek için
->>>>>>> fa5f9b7 (change)
     const isOutOfUsers = cardIndex >= users.length;
 
     return (
