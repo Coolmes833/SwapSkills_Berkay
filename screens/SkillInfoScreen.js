@@ -7,13 +7,14 @@ import {
     StyleSheet,
     Linking,
     ScrollView,
+    TouchableOpacity,
 } from 'react-native';
 import { OPENAI_API_KEY } from '@env';
+import { Ionicons } from '@expo/vector-icons';
 
 const apiKey = OPENAI_API_KEY;
 
-
-export default function SkillInfoScreen({ route }) {
+export default function SkillInfoScreen({ route, navigation }) {
     const { skillName } = route.params;
     const [info, setInfo] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -122,6 +123,12 @@ export default function SkillInfoScreen({ route }) {
 
     return (
         <ScrollView contentContainerStyle={styles.container}>
+            <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+                <Ionicons name="arrow-back" size={24} color="#333" />
+                <Text style={styles.backButtonText}>Go Back</Text>
+            </TouchableOpacity>
+
+
             <Text style={styles.title}>{skillName}</Text>
             {info?.image && <Image source={{ uri: info.image }} style={styles.image} />}
             <Text style={styles.text}>{info?.text}</Text>
@@ -144,8 +151,23 @@ const styles = StyleSheet.create({
         padding: 20,
         backgroundColor: '#fff',
         flexGrow: 1,
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
+    },
+    backButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        alignSelf: 'flex-start',
+        backgroundColor: '#eee',
+        paddingVertical: 6,
+        paddingHorizontal: 10,
+        borderRadius: 8,
+        marginBottom: 10,
+    },
+    backButtonText: {
+        fontSize: 16,
+        color: '#333',
+        marginLeft: 5,
     },
     title: {
         fontSize: 26,

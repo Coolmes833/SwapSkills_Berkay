@@ -46,7 +46,7 @@ function TabNavigator() {
           else if (route.name === 'Requests') {
             iconName = 'hourglass-half';
           }
-          else if (route.name === 'AI Mentor GPT') {
+          else if (route.name === 'AI Help') {
             iconName = 'lightbulb-o'; // alternatif: 'brain', 'robot', 'book'
           }
 
@@ -83,7 +83,7 @@ function TabNavigator() {
       <Tab.Screen name="Chat" component={Chat} />
       <Tab.Screen name="Explore" component={Explore} />
       <Tab.Screen name="Search" component={SearchScreen} />
-      <Tab.Screen name="AI Mentor GPT" component={AiHelperWithGPT} />
+      <Tab.Screen name="AI Help" component={AiHelperWithGPT} />
       <Tab.Screen name="Requests" component={Requests} />
     </Tab.Navigator>
   );

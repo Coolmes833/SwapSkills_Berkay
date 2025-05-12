@@ -58,7 +58,7 @@ export default function AiHelperWithGPT() {
     return (
         <LinearGradient colors={['#5c83b3', '#3b5998', '#1f2f5a']} style={{ flex: 1 }}>
             <ScrollView contentContainerStyle={styles.container}>
-                <Text style={styles.title}>AI Mentor with ChatGPT</Text>
+                <Text style={styles.title}>ChatGPT Integrated AI Mentor </Text>
 
                 <TextInput
                     style={styles.input}
