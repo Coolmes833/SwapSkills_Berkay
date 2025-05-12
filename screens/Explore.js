@@ -70,8 +70,6 @@ export default function Explore() {
         }
     };
 
-
-
     const handleSwipeLeft = () => {
         if (cardIndex < users.length) {
             Alert.alert('Rejected', `${users[cardIndex]?.name || 'Unknown User'} has been rejected`);
@@ -87,7 +85,6 @@ export default function Explore() {
             setCardIndex(prevIndex => prevIndex + 1);
         }
     };
-
 
     const isOutOfUsers = cardIndex >= users.length;
 
@@ -120,6 +117,11 @@ export default function Explore() {
                                     <Text style={styles.cardLabel}>Want to Learn:</Text>
                                     <Text style={styles.cardText}>
                                         {Array.isArray(user.wantToLearn) ? user.wantToLearn.join(', ') : user.wantToLearn || 'None'}
+                                    </Text>
+
+                                    <Text style={styles.cardLabel}>Location:</Text>
+                                    <Text style={styles.cardText}>
+                                        {(user.city || 'N/A') + ', ' + (user.country || 'N/A')}
                                     </Text>
                                 </View>
                             ) : (
@@ -189,7 +191,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffffee',
         borderRadius: 15,
         width: 300,
-        height: 420,
+        height: 450,
         shadowColor: '#000',
         shadowOpacity: 0.1,
         shadowRadius: 5,

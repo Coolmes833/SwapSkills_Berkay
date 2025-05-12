@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../fireBase';
 import 'firebase/compat/firestore';
 import { addFakeUsers } from '../utils/addFakeUsers';
+import { deleteAllUsers } from '../utils/deleteFakeUsers'
 
 export default function CreateYourAccountScreen({ navigation }) {
 
@@ -33,6 +34,11 @@ export default function CreateYourAccountScreen({ navigation }) {
             <TouchableOpacity onPress={() => addFakeUsers(1)} style={{ padding: 12, backgroundColor: 'orange', borderRadius: 8, marginBottom: 20 }}>
                 <Text style={{ color: 'white', textAlign: 'center' }}>+1 Test Kullanıcı Ekle</Text>
             </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => deleteAllUsers()} style={{ padding: 12, backgroundColor: 'orange', borderRadius: 8, marginBottom: 20 }}>
+                <Text style={{ color: 'white', textAlign: 'center' }}>🚮 Tüm Test Kullanıcılarını Sil</Text>
+            </TouchableOpacity>
+
 
             <Text style={styles.header}>Create Your Account</Text>
 
