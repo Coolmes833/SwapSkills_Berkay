@@ -156,6 +156,11 @@ export default function ProfileDetail({ route, navigation }) {
                     {user.location && (
                         <>
                             <Text style={styles.label}>Location:</Text>
+                            {(user.city || user.country) && (
+                                <Text style={styles.cityCountry}>
+                                    {user.city}{user.city && user.country ? ', ' : ''}{user.country}
+                                </Text>
+                            )}
                             <MapView
                                 style={styles.map}
                                 region={{
@@ -265,8 +270,15 @@ const styles = StyleSheet.create({
     },
     distance: {
         marginTop: 8,
-        color: '#fff',
+        color: '#1f2f5a',
         textAlign: 'center',
+        fontWeight: 'bold',
+    },
+    cityCountry: {
+        fontSize: 15,
+        color: '#333',
+        marginTop: 4,
+        marginBottom: 4,
     },
     buttonsContainer: {
         flexDirection: 'row',

@@ -55,13 +55,28 @@ function TabNavigator() {
 
           return <FontAwesome name={iconName} size={24} color={color} />;
         },
-        tabBarActiveTintColor: 'white',
-        tabBarInactiveTintColor: 'lightgray',
         tabBarStyle: {
-          backgroundColor: '#555', height: 60,
+          backgroundColor: '#FF7043',
+          height: 70,
+          paddingBottom: 8,
+          paddingTop: 5,
+          elevation: 8,
+          shadowColor: '#000',
+          shadowOpacity: 0.3,
+          shadowOffset: { width: 0, height: -2 },
+          shadowRadius: 5,
+        },
+        tabBarItemStyle: {
+          borderRightWidth: 1,
+          borderRightColor: '#ffffff55', // yarı saydam beyaz
+        },
+        tabBarActiveTintColor: '#fff',
+        tabBarInactiveTintColor: '#fff',
+        tabBarLabelStyle: {
+          fontSize: 12,
+          fontWeight: 'bold',
         },
         headerShown: false,
-
       })}
     >
       <Tab.Screen name="Profile" component={ProfileScreen} />
@@ -74,7 +89,6 @@ function TabNavigator() {
   );
 }
 
-// Uygulama Yapısı: Stack içinde Tab'lar
 export default function App() {
   return (
     <NavigationContainer>
@@ -84,7 +98,7 @@ export default function App() {
         <Stack.Screen name="ChatDetail" component={ChatDetail} options={{ headerShown: true }} />
         <Stack.Screen name="MainApp" component={TabNavigator} />
         <Stack.Screen name="ProfileDetail" component={ProfileDetail} options={{ headerShown: true, title: 'User Profile' }} />
-        <Stack.Screen name="SkillInfo" component={SkillInfoScreen} options={{ title: 'Skill Info' }} />
+        <Stack.Screen name="SkillInfoScreen" component={SkillInfoScreen} options={{ title: 'Skill Info' }} />
         <Stack.Screen name="ForgotPasswordScreen" component={ForgotPasswordScreen} />
 
 

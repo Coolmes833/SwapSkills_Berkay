@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TextInput, FlatList, TouchableOpacity, Modal, A
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../fireBase';
 import { LinearGradient } from 'expo-linear-gradient';
+import SkillInfoScreen from './SkillInfoScreen';
 
 export default function SearchScreen({ navigation }) {
     const [query, setQuery] = useState('');
@@ -56,7 +57,8 @@ export default function SearchScreen({ navigation }) {
 
             <View style={styles.skillsContainer}>
                 {(Array.isArray(item.skills) ? item.skills : (item.skills || '').split(',')).map((skill, index) => (
-                    <TouchableOpacity key={index} style={styles.skillChip} onPress={() => handleSkillPress(skill.trim())}>
+                    <TouchableOpacity key={index} style={styles.skillChip} onPress={() => navigation.navigate('SkillInfoScreen', { skillName: skill.trim() })}
+                    >
                         <Text style={styles.skillText}>{skill.trim()}</Text>
                     </TouchableOpacity>
                 ))}

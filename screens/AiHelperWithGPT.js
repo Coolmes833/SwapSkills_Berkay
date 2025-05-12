@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { OPENAI_API_KEY } from '@env';
+
+
 import {
     View,
     Text,
@@ -17,7 +20,8 @@ export default function AiHelperWithGPT() {
     const [loading, setLoading] = useState(false);
     const [animatedValue] = useState(new Animated.Value(0));
 
-    const apiKey = "";
+    const apiKey = OPENAI_API_KEY;
+
 
     const handleAskGPT = async () => {
         if (!input.trim()) return;
